@@ -1,9 +1,6 @@
 ## personal aliases
 alias ls='ls -FG'
-alias rm='rm -i'
 alias rmpyc='find . -name "*.pyc" -type f -delete'
-alias cp='cp -i'
-alias mv='mv -i'
 # -> prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
 alias ll="ls -lv"

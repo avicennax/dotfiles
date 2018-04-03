@@ -1,0 +1,5 @@
+code="$HOME/code"
+py="$code/Python"
+bp="$HOME/.bash_profile"
+pjs="$HOME/projects"
+dotfiles="$code/cli/dotfiles"

@@ -9,9 +9,6 @@ if [ -f ~/.bash_variables ]; then
     . ~/.bash_variables
 fi
 
-# added by Anaconda3 4.4.0 installer
-export PATH="$HOME/anaconda/bin:$PATH"
-export PYTHONPATH=$py:$PYTHONPATH
 
 ## ENVIRONMENT VARIABLES
 #-----------------------
@@ -27,6 +24,12 @@ export PATH="$HOME/code/mongodb/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/code/mjpro150/bin:$PATH"
+export PATH="$HOME/anaconda/bin:$PATH"
+export PYTHONPATH=$py:$PYTHONPATH
+
+
+## USER FUNCTIONS
+#----------------
 
 # opens URL parameters in Chrome tabs
 function google()

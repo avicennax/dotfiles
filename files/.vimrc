@@ -8,7 +8,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " vim status bar
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " syntax error highlighting
 Plugin 'scrooloose/syntastic'
 " filesystem tree integration
@@ -72,3 +73,21 @@ set noswapfile
 
 " Always use UTF-8 encoding
 set encoding=utf-8
+
+
+"" air-line
+let g:airline_powerline_fonts=1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_section_warning = ''
+let g:airline#extensions#syntastic#enabled = 1
+let airline#extensions#syntastic#stl_format_warn = '%E{[%e]}'
+
+"" syntastic
+let g:syntastic_python_checkers = ['pylint', 'flake8']
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 2

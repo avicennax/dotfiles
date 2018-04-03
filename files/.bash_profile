@@ -2,7 +2,12 @@
 #------------------------
 
 # prompt
-export PS1="\[\e[1;92m\]\u@\e[0m\h::\W-\e[0;36m\t\e[0m$ "
+export PS1="\[\e[1;92m\]\u\e[0m:\w$ "
+
+# Load user shell variables
+if [ -f ~/.bash_variables ]; then
+    . ~/.bash_variables
+fi
 
 # added by Anaconda3 4.4.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
@@ -22,11 +27,6 @@ export PATH="$HOME/code/mongodb/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/code/mjpro150/bin:$PATH"
-
-## path shortcuts
-py="$HOME/code/Python"
-bp="$HOME/.bash_profile"
-pjs="$HOME/projects"
 
 # opens URL parameters in Chrome tabs
 function google()
@@ -61,3 +61,4 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+fi

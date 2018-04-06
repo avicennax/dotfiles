@@ -7,7 +7,11 @@
     splog = log --all --decorate --oneline --graph
     st = status
     current = rev-parse --abbrev-ref HEAD
-    com = commit -m
+    cm = commit -m
+    b = branch
+    co = checkout
+    plo = pull origin
+    pho = push origin
 
 [color]
     diff = auto

@@ -16,7 +16,7 @@ alias rmpyc='find . -name "*.pyc" -type f -delete'
 alias gc="git current"
 
 ## s-search aliases
-alias s-so="s -p stackoverflow"
+alias so="s -p stackoverflow"
 alias explainshell="s -p explainshell"
 alias github="s -p github"
 alias gdocs="s -p googledocs"

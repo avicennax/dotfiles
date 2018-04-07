@@ -75,6 +75,10 @@ set noswapfile
 set encoding=utf-8
 
 
+"" Mappings
+map :SC :SyntasticCheck
+
+
 "" air-line
 let g:airline_powerline_fonts=1
 

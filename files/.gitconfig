@@ -26,3 +26,6 @@
 
 [push]
     default = current
+
+[pull]
+    default = current

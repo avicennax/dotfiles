@@ -76,7 +76,10 @@ set encoding=utf-8
 
 
 "" Mappings
+let mapleader=","
+
 map :SC :SyntasticCheck
+map :pyi ::Pyimport
 
 
 "" air-line
@@ -91,7 +94,7 @@ let g:airline#extensions#syntastic#enabled = 1
 let airline#extensions#syntastic#stl_format_warn = '%E{[%e]}'
 
 "" syntastic
-let g:syntastic_python_checkers = ['pylint', 'flake8']
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 2

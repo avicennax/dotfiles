@@ -4,20 +4,12 @@
 # prompt
 export PS1="\[\e[1;92m\]\u\e[0m:\w$ "
 
-# Load user shell variables
-if [ -f ~/.bash_variables ]; then
-    . ~/.bash_variables
-fi
-
 
 ## ENVIRONMENT VARIABLES
 #-----------------------
 
 # EDITOR
 export EDITOR='vim'
-
-## PYTHONPATH
-export PYTHONPATH="$HOME/projects/"
 
 ## PATH
 export PATH="$HOME/code/mongodb/bin:$PATH"
@@ -28,30 +20,18 @@ export PATH="$HOME/anaconda/bin:$PATH"
 export PYTHONPATH=$py:$PYTHONPATH
 
 
-## USER FUNCTIONS
-#----------------
+## USER VARIABLES, FUNCTIONS AND ALIASES
+#---------------------------------------
 
-# opens URL parameters in Chrome tabs
-function google()
-{
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" "$@" &
-}
+# Load user shell variables
+if [ -f ~/.bash_variables ]; then
+    . ~/.bash_variables
+fi
 
-# opens github cheatsheets
-function cheatsheets()
-{
-	if [ "$#" -gt "0" ]; then
-		topic=$1
-		google "https://github.com/avicennax/cheatsheets/blob/master/${topic}.md"
-	else
-		google "https://github.com/avicennax/cheatsheets"
-	fi
-}
-
-# moves file/dir to OSX trash directory
-function trash(){
-    mv $1 ~/.Trash
-}
+# Load bash functions into session.
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
 
 # Alias definitions.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.

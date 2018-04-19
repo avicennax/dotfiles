@@ -1,3 +1,8 @@
+# bash_variables
+# vim: filetype=sh
+# DESCRIPTION: user defined shell variables loaded into shell session
+#   by .bashrc or .bash_profile
+
 code="$HOME/code"
 py="$code/Python"
 bp="$HOME/.bash_profile"

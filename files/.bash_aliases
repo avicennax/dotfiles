@@ -1,3 +1,7 @@
+# bash_aliases
+# vim: filetype=sh
+# DESCRIPTION: user defined aliases; machine specific.
+
 ## generic shell aliases
 alias ls='ls -FG'
 alias mkdir='mkdir -p'

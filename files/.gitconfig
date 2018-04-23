@@ -12,6 +12,8 @@
     co = checkout
     plo = pull origin
     pho = push origin
+    del = branch -d
+    DEL = branch -D
 
 [color]
     diff = auto

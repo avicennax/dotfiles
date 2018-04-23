@@ -83,10 +83,9 @@ map :pyi ::Pyimport
 
 
 "" air-line
-let g:airline_powerline_fonts=1
-
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
+    let g:airline_powerline_fonts=1
 endif
 
 let g:airline_section_warning = ''

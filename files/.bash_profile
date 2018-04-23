@@ -1,4 +1,4 @@
-## shaxby's .bash_profile
+## shaxby's basic .bash_profile
 #------------------------
 
 # prompt
@@ -12,13 +12,7 @@ export PS1="\[\e[1;92m\]\u\e[0m:\w$ "
 export EDITOR='vim'
 
 ## PATH
-export PATH="$HOME/code/mongodb/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-export PATH=$HOME/.local/bin:$PATH
-export PATH="$HOME/code/mjpro150/bin:$PATH"
-export PATH="$HOME/anaconda/bin:$PATH"
-export PYTHONPATH=$py:$PYTHONPATH
-
 
 ## USER VARIABLES, FUNCTIONS AND ALIASES
 #---------------------------------------
@@ -37,6 +31,11 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+# Local machine definitions and settings
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
 fi
 
 # enable programmable completion features (you don't need to enable

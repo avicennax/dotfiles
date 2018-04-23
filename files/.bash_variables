@@ -3,9 +3,10 @@
 # DESCRIPTION: user defined shell variables loaded into shell session
 #   by .bashrc or .bash_profile
 
-code="$HOME/code"
-py="$code/Python"
+src="$HOME/src"
+bl="$HOME/.bash_local"
+ba="$HOME/.bash_aliases"
 bp="$HOME/.bash_profile"
-pjs="$HOME/projects"
-dotfiles="$code/cli/dotfiles"
+bf="$HOME/.bash_functions"
 vimrc="$HOME/.vimrc"
+

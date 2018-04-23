@@ -1,0 +1,42 @@
+#!/bin/bash
+# vim: filetype=sh
+# bash_locals
+# Description: contains shell functions, variables, aliases etc
+#   specific to local machine.
+
+## ENVIRONMENT VARIABLES
+## =====================
+
+## PATH
+export PATH="$HOME/code/mongodb/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
+export PATH="$HOME/code/mjpro150/bin:$PATH"
+export PATH="$HOME/anaconda/bin:$PATH"
+export PYTHONPATH=$py:$PYTHONPATH
+
+## USER VARIABLES, FUNCTIONS AND ALIASES
+
+## VARIABLES
+## =========
+
+py="$code/Python"
+pjs="$HOME/projects"
+dotfiles="$code/cli/dotfiles"
+
+## ALIASES
+## =======
+
+## user aliases
+alias cookiecutter-ds="cookiecutter https://github.com/avicennax/cookiecutter-data-science"
+alias sublime="subl"
+
+## s-search aliases
+alias so="s -p stackoverflow"
+alias explainshell="s -p explainshell"
+alias github="s -p github"
+alias gdocs="s -p googledocs"
+
+# finder
+alias findershow='defaults write com.apple.finder ShowAllFiles TRUE'
+alias finderhide='defaults write com.apple.finder ShowAllFiles FALSE'
+

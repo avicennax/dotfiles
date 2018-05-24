@@ -1,6 +1,14 @@
 ## shaxby's basic .bash_profile
 #------------------------
 
+# Standard terminal bindings
+bind '"\e[5C": forward-word'
+bind '"\e[5D": backward-word'
+
+# iTerm forward/backwards bindings
+bind '"\e[1;5C": forward-word'
+bind '"\e[1;5D": backward-word'
+
 # prompt
 export PS1="\[\e[1;92m\]\u\e[0m:\w$ "
 

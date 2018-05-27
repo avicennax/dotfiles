@@ -78,9 +78,11 @@ set encoding=utf-8
 "" Mappings
 let mapleader=","
 
-map :SC :SyntasticCheck
-map :pyi ::Pyimport
+nmap :SC :SyntasticCheck
+nmap :pyi :Pyimport
+nmap <leader>rw :%s/\s\+$//e
 
+autocmd FileType python nmap <buffer> <leader>ipdb iimport ipdb; ipdb.set_trace()
 
 "" air-line
 if !exists('g:airline_symbols')

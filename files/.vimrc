@@ -14,8 +14,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
 " filesystem tree integration
 Plugin 'scrooloose/nerdtree'
-" python auto-completion
-Plugin 'davidhalter/jedi-vim'
 " quoting made easy
 Plugin 'tpope/vim-surround'
 " easy commenting
@@ -73,15 +71,27 @@ set encoding=utf-8
 
 
 "" Mappings
+
 let mapleader=","
-
-nmap :SC :SyntasticCheck
-nmap :pyi :Pyimport
-
+nnoremap :SC :SyntasticCheck
+"" New tags mapping
+nnoremap <leader>l <c-]>
+"" Break out of tag window (hack)
+nnoremap <leader>t <c-t>
 "" Remove trailing whitespaces
-nmap <leader>rw :%s/\s\+$//e
+nnoremap <leader>rw :%s/\s\+$//e<cr>
+
+"" Python bindings
+
+nnoremap :pyi :Pyimport
+" Set python tags
+if !empty($CONDA_DEFAULT_ENV)
+    au FileType python set tags=~/tags/py-$CONDA_DEFAULT_ENV.tags
+else
+    au FileType python set tags=~/tags/py-root.tags
+endif
 "" Insert pdb.set_trace() at cursor
-autocmd FileType python nmap <buffer> <leader>ipdb iimport ipdb; ipdb.set_trace()
+autocmd FileType python :iabbrev <buffer> ipdb> import ipdb; ipdb.set_trace()
 
 
 "" air-line

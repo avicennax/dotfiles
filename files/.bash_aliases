@@ -14,7 +14,7 @@ alias fgrep="fgrep --color=auto"
 alias reload="source $bp"
 alias home="cd ${HOME}"
 alias qf="find . -name "
-alias gr="grep . -rn -E "
+alias gr="grep . -rnE -e "
 
 # go up
 alias up='cd ../'                           

@@ -13,7 +13,10 @@
     plo = pull origin
     pho = push origin
     del = branch -d
-    DEL = branch -D
+    unstage = reset HEAD
+    tags = tag -l
+    branches = -a
+    remotes = remote -v
 
 [color]
     diff = auto

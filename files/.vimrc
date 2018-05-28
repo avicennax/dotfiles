@@ -57,7 +57,7 @@ set modeline
 set expandtab
 set tabstop=4
 
-" Allows deletion past an "a"ppend and similar (OPTIONAL)
+" Allows deletion past an append and similar (OPTIONAL)
 set backspace=indent,eol,start
 
 " Use syntax highlighting/indentation based on filetype (RECOMMENDED)
@@ -68,9 +68,6 @@ filetype indent plugin on
 set number
 highlight LineNr ctermfg=grey
 
-" Don't generate swp files
-set noswapfile
-
 " Always use UTF-8 encoding
 set encoding=utf-8
 
@@ -80,9 +77,12 @@ let mapleader=","
 
 nmap :SC :SyntasticCheck
 nmap :pyi :Pyimport
-nmap <leader>rw :%s/\s\+$//e
 
+"" Remove trailing whitespaces
+nmap <leader>rw :%s/\s\+$//e
+"" Insert pdb.set_trace() at cursor
 autocmd FileType python nmap <buffer> <leader>ipdb iimport ipdb; ipdb.set_trace()
+
 
 "" air-line
 if !exists('g:airline_symbols')

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-for dotfile in "$@"; do
-    cp files/${dotfile} ~ && echo "Moving $dotfile to $HOME"
-done

@@ -74,6 +74,7 @@ set encoding=utf-8
 
 let mapleader=","
 nnoremap :SC :SyntasticCheck
+nnoremap :SR :SyntasticReset
 "" New tags mapping
 nnoremap <leader>l <c-]>
 "" Break out of tag window (hack)

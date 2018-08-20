@@ -15,8 +15,9 @@
     del = branch -d
     unstage = reset HEAD
     tags = tag -l
-    branches = -a
+    branches = branch -a
     remotes = remote -v
+    purge = "!sh -c 'git reset --hard; git clean -f'"
 
 [color]
     diff = auto

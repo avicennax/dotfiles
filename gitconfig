@@ -17,7 +17,7 @@
     tags = tag -l
     branches = branch -a
     remotes = remote -v
-    purge = "!sh -c 'git reset --hard; git clean -f'"
+    purge = "!sh -c 'git reset --hard; git clean -df'"
 
 [color]
     diff = auto

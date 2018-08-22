@@ -2,11 +2,7 @@
 #------------------------
 
 # Shell key bindings
-
-# Unbinds \C-w
-stty werase undef
-bind '"\C-w": forward-word'
-bind '"\C-b": backward-word'
+set -o vi
 
 # prompt
 export PS1="\[\e[1;92m\]\u\[\e[m\]@\[\e[1;33m\]\h\e[0m:\w$ "

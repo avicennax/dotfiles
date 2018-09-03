@@ -15,6 +15,8 @@ export PATH="$HOME/anaconda/bin:$PATH"
 export PYTHONPATH=$py:$PYTHONPATH
 
 ## USER VARIABLES, FUNCTIONS AND ALIASES
+## =====================================
+
 
 ## VARIABLES
 ## =========
@@ -41,3 +43,7 @@ alias gdocs="s -p googledocs"
 alias findershow='defaults write com.apple.finder ShowAllFiles TRUE'
 alias finderhide='defaults write com.apple.finder ShowAllFiles FALSE'
 
+# hy
+if command -v hy >/dev/null; then
+    alias hy="hy --repl-output-fn=hy.contrib.hy-repr.hy-repr"
+fi

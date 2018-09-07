@@ -1,14 +1,19 @@
 ## shaxby's basic .bash_profile
-#------------------------
-
-# Shell key bindings
-set -o vi
+#------------------------------
 
 # prompt
 export PS1="\[\e[1;92m\]\u\[\e[m\]@\[\e[1;33m\]\h\e[0m:\w$ "
 
 # Set color prompt
 export TERM="xterm-256color"
+
+# Shell key bindings
+
+# Unbinds \C-w
+stty werase undef
+bind '"\C-w": forward-word'
+bind '"\C-b": backward-word'
+
 
 ## ENVIRONMENT VARIABLES
 #-----------------------
@@ -49,3 +54,4 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+

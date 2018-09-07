@@ -17,6 +17,7 @@ export PYTHONPATH=$py:$PYTHONPATH
 ## USER VARIABLES, FUNCTIONS AND ALIASES
 ## =====================================
 
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 ## VARIABLES
 ## =========

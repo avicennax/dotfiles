@@ -17,12 +17,13 @@ alias qf="find . -name "
 alias gr="grep . -rnE -e "
 
 # go up
-alias up='cd ../'                           
-alias upp='cd ../../'                       
-alias uppp='cd ../../../'                   
-alias upppp='cd ../../../../'               
-alias uppppp='cd ../../../../../'           
-alias upppppp='cd ../../../../../../'       
+while [ ${cur_dep=0} -lt ${rec_dep=9} ]
+do
+    up="${up="cd "}../"
+    eval alias ${last="up"}="'${up}'"
+    last="${last}p"
+    ((cur_dep++)) 
+done
 
 ## user aliases
 alias rmpyc='find . -name "*.pyc" -type f -delete'

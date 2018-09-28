@@ -11,12 +11,12 @@ function google()
 # opens github cheatsheets
 function cheatsheets()
 {
-	if [ "$#" -gt "0" ]; then
-		topic=$1
-		google "https://github.com/avicennax/cheatsheets/blob/master/${topic}.md"
-	else
-		google "https://github.com/avicennax/cheatsheets"
-	fi
+    if [ "$#" -gt "0" ]; then
+        topic=$1
+        google "https://github.com/avicennax/cheatsheets/blob/master/${topic}.md"
+    else
+        google "https://github.com/avicennax/cheatsheets"
+    fi
 }
 
 # moves file/dir to OSX trash directory

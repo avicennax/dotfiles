@@ -15,6 +15,9 @@ alias reload="source $bp"
 alias home="cd ${HOME}"
 alias qf="find . -name "
 alias gr="grep . -rnE -e "
+alias h="history"
+alias hg="history | grep "
+alias ht="history | tail -n "
 
 # go up
 while [ ${cur_dep=0} -lt ${rec_dep=9} ]

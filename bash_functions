@@ -23,3 +23,10 @@ function cheatsheets()
 function trash(){
     mv $1 ~/.Trash
 }
+
+# history with tail and grep.
+function htg(){
+    tailn=$1
+    shift 1
+    history | tail -n $tailn | grep $@
+}

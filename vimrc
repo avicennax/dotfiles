@@ -94,6 +94,9 @@ endif
 "" Insert pdb.set_trace() at cursor
 autocmd FileType python :iabbrev <buffer> ipdb> import ipdb; ipdb.set_trace()
 
+"" Hy bindings
+au FileType hy set tabstop=2
+
 
 "" air-line
 if !exists('g:airline_symbols')

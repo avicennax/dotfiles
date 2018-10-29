@@ -20,6 +20,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 " show git changes in side column
 Plugin 'airblade/vim-gitgutter'
+" sensible defaults; maybe some redundancy between
+" vim-sensible and set statements below.
+Plugin 'tpope/vim-sensible'
+" tag browser
+Plugin 'majutsushi/tagbar'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,7 +51,7 @@ colorscheme elflord
 set directory=$HOME/.backup,$HOME/tmp,$HOME
 set backupdir=$HOME/.backup,$HOME/tmp,$HOME
 
-" Visually show TABs and trailing whitespace (RECOMMENDED)
+" Visually show TABs and trailing whitespace
 set listchars=tab:»\ ,trail:·
 
 " Allows for magic like /* vim: tw=60 ts=2: */, but is a potential security vulnerability
@@ -55,10 +61,10 @@ set modeline
 set expandtab
 set tabstop=4
 
-" Allows deletion past an append and similar (OPTIONAL)
+" Allows deletion past an append and similar
 set backspace=indent,eol,start
 
-" Use syntax highlighting/indentation based on filetype (RECOMMENDED)
+" Use syntax highlighting/indentation based on filetype
 syntax on
 filetype indent plugin on
 
@@ -68,6 +74,12 @@ highlight LineNr ctermfg=grey
 
 " Always use UTF-8 encoding
 set encoding=utf-8
+
+" Don't generate swp files
+set noswapfile
+
+" highlight matches
+set hlsearch
 
 
 "" Mappings
@@ -82,17 +94,33 @@ nnoremap <leader>t <c-t>
 "" Remove trailing whitespaces
 nnoremap <leader>rw :%s/\s\+$//e<cr>
 
+
+"" ctags
+function LoadRepoTags()
+    let l:repo_tags = systemlist("git rev-parse --git-dir")[0] . "/tags"
+    let &l:tags = l:repo_tags
+endfunction
+
+nnoremap <leader>lr :call LoadRepoTags()<cr>
+
+
 "" Python bindings
 
 nnoremap :pyi :Pyimport
 " Set python tags
 if !empty($CONDA_DEFAULT_ENV)
-    au FileType python set tags=~/tags/py-$CONDA_DEFAULT_ENV.tags
+    au FileType python setlocal tags=~/tags/py-$CONDA_DEFAULT_ENV.tags
+    let g:pytags = "~/tags/py-$CONDA_DEFAULT_ENV.tags"
 else
-    au FileType python set tags=~/tags/py-root.tags
+    au FileType python setlocal tags=~/tags/py-root.tags
+    let g:pytags = "~/tags/py-root.tags"
 endif
 "" Insert pdb.set_trace() at cursor
 autocmd FileType python :iabbrev <buffer> ipdb> import ipdb; ipdb.set_trace()
+"" Load python tags file
+autocmd Filetype python nnoremap <leader>ll :let &l:tags=g:pytags<cr>
+autocmd Filetype python nnoremap :pyi :Pyimport
+
 
 "" Hy bindings
 au FileType hy set tabstop=2

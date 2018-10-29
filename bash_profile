@@ -7,9 +7,6 @@ export PS1="\[\e[1;92m\]\u\[\e[m\]@\[\e[1;33m\]\h\e[0m:\w$ "
 # Set color prompt
 export TERM="xterm-256color"
 
-# Shell key bindings
-set -o vi
-
 ## ENVIRONMENT VARIABLES
 #-----------------------
 

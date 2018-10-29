@@ -1,7 +1,6 @@
 [user]
     name = avicennax
     email = simon.haxby@gmail.com
-
 [alias]
     plog = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     splog = log --all --decorate --oneline --graph
@@ -18,7 +17,7 @@
     branches = branch -a
     remotes = remote -v
     purge = "!sh -c 'git reset --hard; git clean -df'"
-
+	ctags = "!sh -c .git/hooks/ctags"
 [color]
     diff = auto
     status = auto
@@ -26,12 +25,11 @@
     interactive = auto
     ui = true
     pager = true
-
 [core]
     editor = vim
-
 [push]
     default = current
-
 [pull]
     default = current
+[init]
+	templatedir = ~/.git_template

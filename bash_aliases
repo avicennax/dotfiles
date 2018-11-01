@@ -24,8 +24,8 @@ alias hg="history | grep "
 alias ht="history | tail -n "
 
 ## tmux aliases
-alias tas="tmux attach -t"
-alias tss="tmux switch -t"
+alias tas="tmux attach -t "
+alias tss="tmux switch -t "
 alias tks="tmux kill-session -t "
 
 # go up black magic

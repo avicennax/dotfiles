@@ -87,8 +87,6 @@ set noswapfile
 " highlight matches
 set hlsearch
 
-" use autocomplete
-"let g:deoplete#enable_at_startup = 1
 
 "" Mappings
 
@@ -104,6 +102,8 @@ nnoremap <leader>rw :%s/\s\+$//e<cr>
 
 
 "" ctags
+
+" Point l:tags at the repo tags file
 function LoadRepoTags()
     let l:repo_tags = systemlist("git rev-parse --git-dir")[0] . "/tags"
     let &l:tags = l:repo_tags
@@ -132,7 +132,6 @@ autocmd Filetype python nnoremap :pyi :Pyimport
 
 "" Hy bindings
 au FileType hy set tabstop=2
-
 
 "" deoplete auto-completion
 let g:deoplete#enable_at_startup = 1

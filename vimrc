@@ -25,7 +25,13 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-sensible'
 " tag browser
 Plugin 'majutsushi/tagbar'
-
+" autocompletion
+Plugin 'Shougo/deoplete.nvim'
+" deoplete dependencies
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+" python autocompletion
+Plugin 'zchee/deoplete-jedi'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,6 +87,8 @@ set noswapfile
 " highlight matches
 set hlsearch
 
+" use autocomplete
+"let g:deoplete#enable_at_startup = 1
 
 "" Mappings
 
@@ -125,6 +133,13 @@ autocmd Filetype python nnoremap :pyi :Pyimport
 "" Hy bindings
 au FileType hy set tabstop=2
 
+
+"" deoplete auto-completion
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('sources', {'python': ['jedi']})
+let g:deoplete#sources#jedi#show_docstring = 1
+highlight Pmenu ctermbg=244 ctermfg=15
+highlight PmenuSel ctermbg=35 ctermfg=15
 
 "" air-line
 if !exists('g:airline_symbols')

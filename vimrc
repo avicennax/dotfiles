@@ -88,7 +88,7 @@ set noswapfile
 set hlsearch
 
 
-"" Mappings
+"" Environment / Mappings
 
 let mapleader=","
 nnoremap :SC :SyntasticCheck
@@ -97,9 +97,10 @@ nnoremap :SR :SyntasticReset
 nnoremap <leader>l <c-]>
 "" Break out of tag window (hack)
 nnoremap <leader>t <c-t>
-"" Remove trailing whitespaces
-nnoremap <leader>rw :%s/\s\+$//e<cr>
-
+" Remove trailing whitespace prior to writing file
+augroup env
+    autocmd BufWritePre * :%s/\s\+$//e
+augroup END
 
 "" ctags
 
@@ -115,19 +116,22 @@ nnoremap <leader>lr :call LoadRepoTags()<cr>
 "" Python bindings
 
 nnoremap :pyi :Pyimport
-" Set python tags
-if !empty($CONDA_DEFAULT_ENV)
-    au FileType python setlocal tags=~/tags/py-$CONDA_DEFAULT_ENV.tags
-    let g:pytags = "~/tags/py-$CONDA_DEFAULT_ENV.tags"
-else
-    au FileType python setlocal tags=~/tags/py-root.tags
-    let g:pytags = "~/tags/py-root.tags"
-endif
-"" Insert pdb.set_trace() at cursor
-autocmd FileType python :iabbrev <buffer> ipdb> import ipdb; ipdb.set_trace()
-"" Load python tags file
-autocmd Filetype python nnoremap <leader>ll :let &l:tags=g:pytags<cr>
-autocmd Filetype python nnoremap :pyi :Pyimport
+
+augroup python
+    " Set python tags
+    if !empty($CONDA_DEFAULT_ENV)
+        au FileType python setlocal tags=~/tags/py-$CONDA_DEFAULT_ENV.tags
+        let g:pytags = "~/tags/py-$CONDA_DEFAULT_ENV.tags"
+    else
+        au FileType python setlocal tags=~/tags/py-root.tags
+        let g:pytags = "~/tags/py-root.tags"
+    endif
+    "" Insert pdb.set_trace() at cursor
+    autocmd FileType python :iabbrev <buffer> ipdb> import ipdb; ipdb.set_trace()
+    "" Load python tags file
+    autocmd Filetype python nnoremap <leader>ll :let &l:tags=g:pytags<cr>
+    autocmd Filetype python nnoremap :pyi :Pyimport
+augroup END
 
 
 "" Hy bindings

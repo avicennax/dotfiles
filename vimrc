@@ -65,6 +65,7 @@ set modeline
 
 " Replace tabs with spaces
 set expandtab
+set shiftwidth=4
 set tabstop=4
 
 " Allows deletion past an append and similar
@@ -87,29 +88,39 @@ set noswapfile
 " highlight matches
 set hlsearch
 
+" allow buffers to be hidden
+set hidden
+
 
 "" Environment / Mappings
 
 let mapleader=","
+"
+" Syntastic remaps
 nnoremap :SC :SyntasticCheck
 nnoremap :SR :SyntasticReset
-"" New tags mapping
+" Clear highlighting
+nnoremap <leader>h :noh<cr>
+" New tags mapping
 nnoremap <leader>l <c-]>
-"" Break out of tag window (hack)
+" Break out of tag window (hack)
 nnoremap <leader>t <c-t>
-" Remove trailing whitespace prior to writing file
 augroup env
-    autocmd BufWritePre * :%s/\s\+$//e
+    " Remove trailing whitespace prior to writing file
+    autocmd BufWritePre * %s/\s\+$//e
+    " Automatically reload vimrc after saving
+    autocmd BufWritePost $MYVIMRC source %
 augroup END
 
 "" ctags
 
 " Point l:tags at the repo tags file
-function LoadRepoTags()
-    let l:repo_tags = systemlist("git rev-parse --git-dir")[0] . "/tags"
-    let &l:tags = l:repo_tags
-endfunction
-
+if !exists('*LoadRepoTags')
+    function LoadRepoTags()
+        let l:repo_tags = systemlist("git rev-parse --git-dir")[0] . "/tags"
+        let &l:tags = l:repo_tags
+    endfunction
+endif
 nnoremap <leader>lr :call LoadRepoTags()<cr>
 
 
@@ -139,8 +150,8 @@ au FileType hy set tabstop=2
 
 "" deoplete auto-completion
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('sources', {'python': ['jedi']})
 let g:deoplete#sources#jedi#show_docstring = 1
+call deoplete#custom#option('sources', {'python': ['jedi']})
 highlight Pmenu ctermbg=244 ctermfg=15
 highlight PmenuSel ctermbg=35 ctermfg=15
 

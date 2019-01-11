@@ -14,7 +14,7 @@ export TERM="xterm-256color"
 export EDITOR='vim'
 
 ## PATH
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/sbin:$PATH"
 
 ## USER VARIABLES, FUNCTIONS AND ALIASES
 #---------------------------------------

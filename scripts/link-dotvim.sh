@@ -12,7 +12,7 @@ if [[ -d $HOME/.vim ]]; then
     for directory in $(ls ${vim_dir}/vim); do
         if [[ ! -e $HOME/.vim/${directory} ]]; then
             printf "~/.vim/${directory} successfully linked.\n"
-            ln -s ${vim_dir}/${directory} $HOME/.vim/${directory}
+            ln -s ${vim_dir}/vim/${directory} $HOME/.vim/${directory}
         else
             printf "~/.vim/${directory} already exists; linked not created.\n"
         fi

@@ -1,0 +1,13 @@
+# bash_variables
+# vim: filetype=sh
+# DESCRIPTION: user defined shell variables loaded into shell session
+#   by .bashrc or .bash_profile
+
+src="$HOME/src"
+bv="$HOME/.bash_variables"
+bl="$HOME/.bash_local"
+ba="$HOME/.bash_aliases"
+bp="$HOME/.bash_profile"
+bf="$HOME/.bash_functions"
+vimrc="$HOME/.vimrc"
+

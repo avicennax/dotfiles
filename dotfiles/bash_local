@@ -1,0 +1,53 @@
+#!/bin/bash
+# vim: filetype=sh
+# bash_locals
+# Description: contains shell functions, variables, aliases etc
+#   specific to local machine.
+
+## ENVIRONMENT VARIABLES
+## =====================
+
+## PATH
+export PATH="$HOME/src/mongodb/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
+export PATH="$HOME/src/mjpro150/bin:$PATH"
+export PATH="$HOME/anaconda/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/src/go/bin:$PATH"
+
+export PYTHONPATH=$py:$PYTHONPATH
+export GOPATH="$HOME/src/go"
+
+## USER VARIABLES, FUNCTIONS AND ALIASES
+## =====================================
+
+## VARIABLES
+## =========
+
+src="$HOME/src"
+py="$src/Python"
+pjs="$HOME/projects"
+dotfiles="$src/cli/dotfiles"
+
+## ALIASES
+## =======
+
+## user aliases
+alias cookiecutter-ds="cookiecutter https://github.com/avicennax/cookiecutter-data-science"
+alias sublime="subl"
+alias scipython="ipython --profile=scipy"
+
+## s-search aliases
+alias so="s -p stackoverflow"
+alias explainshell="s -p explainshell"
+alias github="s -p github"
+alias gdocs="s -p googledocs"
+
+# finder
+alias findershow='defaults write com.apple.finder ShowAllFiles TRUE'
+alias finderhide='defaults write com.apple.finder ShowAllFiles FALSE'
+
+# hy
+if command -v hy >/dev/null; then
+    alias hy="hy --repl-output-fn=hy.contrib.hy-repr.hy-repr"
+fi

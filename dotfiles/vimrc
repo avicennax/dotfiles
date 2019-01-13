@@ -95,6 +95,15 @@ set hlsearch
 " allow buffers to be hidden
 set hidden
 
+" no terminal error bells
+set noerrorbells
+
+" Increase cmd history length
+set history=250
+
+" Set vim undo stack depth
+set undolevels=500
+
 
 "" Environment / Mappings
 
@@ -102,8 +111,11 @@ let mapleader=","
 " Syntastic remaps
 nnoremap :SC :SyntasticCheck
 nnoremap :SR :SyntasticReset
+" Easier buffer spliting
+nnoremap <leader>vs :vsp<cr>
+nnoremap <leader>hs :sp<cr>
 " Clear highlighting
-nnoremap <leader>h :noh<cr>
+nnoremap <leader>ch :noh<cr>
 augroup env
     " Remove trailing whitespace prior to writing file
     autocmd BufWritePre * %s/\s\+$//e
@@ -129,7 +141,7 @@ endif
 nnoremap <leader>lr :call LoadRepoTags()<cr>
 
 
-" Filetype header
+" Filetype headers
 autocmd BufNewfile *.py so $HOME/.vim/headers/python.vim
 
 
@@ -161,3 +173,7 @@ let g:syntastic_auto_jump = 2
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_error_symbol = "\u2717"
 let g:syntastic_warning_symbol = "\u26A0"
+
+
+"" gitgutter
+highlight clear SignColumn

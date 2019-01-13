@@ -23,7 +23,7 @@ Plugin 'airblade/vim-gitgutter'
 " sensible defaults; maybe some redundancy between
 " vim-sensible and set statements below.
 Plugin 'tpope/vim-sensible'
-" tag browser
+" repo explorer via in-memory tags
 Plugin 'majutsushi/tagbar'
 " autocompletion
 Plugin 'Shougo/deoplete.nvim'
@@ -143,6 +143,7 @@ nnoremap <leader>lr :call LoadRepoTags()<cr>
 
 " Filetype headers
 autocmd BufNewfile *.py so $HOME/.vim/headers/python.vim
+autocmd BufNewfile *.sh so $HOME/.vim/headers/bash.vim
 
 
 "" deoplete auto-completion

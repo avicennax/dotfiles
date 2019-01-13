@@ -7,7 +7,7 @@
 printf "Running $0\n\n"
 set -u
 
-dotfiles_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. >/dev/null && pwd )"
+dotfiles_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/../dotfiles >/dev/null && pwd )"
 
 for dotfile in $(find $dotfiles_dir -maxdepth 1 -not -type d); do
     if [[ ${dotfile##*/} != 'README.md' ]]; then

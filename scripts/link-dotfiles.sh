@@ -11,10 +11,8 @@ set -u
 dotfiles_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/../dotfiles >/dev/null && pwd )"
 
 for dotfile in $(find $dotfiles_dir -maxdepth 1 -not -type d); do
-    if [[ ${dotfile##*/} != 'README.md' ]]; then
-        ln -s $dotfile ~/.${dotfile##*/}
-        printf "${dotfile##*/} successfully linked to: ~/.${dotfile##*/}\n"
-    fi
+    ln -s $dotfile ~/.${dotfile##*/}
+    printf "${dotfile##*/} successfully linked to: ~/.${dotfile##*/}\n"
 done
 
 printf "\nExiting.\n\n"

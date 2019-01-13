@@ -3,10 +3,10 @@
 
 " Set python tags
 if !empty($CONDA_DEFAULT_ENV)
-    au FileType python setlocal tags=~/tags/py-$CONDA_DEFAULT_ENV.tags
+    setlocal tags=~/tags/py-$CONDA_DEFAULT_ENV.tags
     let g:pytags = "~/tags/py-$CONDA_DEFAULT_ENV.tags"
 else
-    au FileType python setlocal tags=~/tags/py-root.tags
+    setlocal tags=~/tags/py-root.tags
     let g:pytags = "~/tags/py-root.tags"
 endif
 
@@ -15,6 +15,3 @@ iabbrev <buffer> ipdb> import ipdb; ipdb.set_trace()
 
 "" Load python tags file
 nnoremap <leader>ll :let &l:tags=g:pytags<cr>
-
-"" Add python file headers
-autocmd BufNewfile *.py i#!/usr/bin/env python

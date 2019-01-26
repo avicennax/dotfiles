@@ -5,7 +5,7 @@
 ## generic shell aliases
 alias ls='ls -FG'
 alias mkdir='mkdir -p'
-alias ll="ls -lv"
+alias ll="ls -lva"
 alias la="ll -a"
 alias lm="ll | less"
 alias reload="source $bp"
@@ -20,7 +20,7 @@ alias gr="grep . -rnE -e "
 
 ## history aliases
 alias h="history"
-alias hg="history | grep "
+alias hgr="history | grep "
 alias ht="history | tail -n "
 
 ## tmux aliases
@@ -35,7 +35,7 @@ do
     up="${up="cd "}../"
     eval alias ${last="up"}="'${up}'"
     last="${last}p"
-    ((cur_dep++)) 
+    ((cur_dep++))
 done
 
 ## user aliases

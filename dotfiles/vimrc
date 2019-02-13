@@ -58,6 +58,7 @@ colorscheme elflord
 
 " Place backup files in an alternate directory so they don't clutter working space
 " (Make sure the directory exists; it will try each until one works)
+" Not being used while noswapfile is enabled
 set directory=$HOME/.backup,$HOME/tmp,$HOME
 set backupdir=$HOME/.backup,$HOME/tmp,$HOME
 
@@ -124,6 +125,12 @@ augroup env
 augroup END
 
 
+"" Python file bindings
+augroup python
+    autocmd BufWritePre *.py :normal gggqG
+augroup END
+
+
 "" ctags
 
 " New tags mapping
@@ -141,7 +148,7 @@ endif
 nnoremap <leader>lr :call LoadRepoTags()<cr>
 
 
-" Filetype headers
+"" Filetype headers
 autocmd BufNewfile *.py so $HOME/.vim/headers/python.vim
 autocmd BufNewfile *.sh so $HOME/.vim/headers/bash.vim
 

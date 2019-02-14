@@ -37,7 +37,7 @@ alias cookiecutter-ds="cookiecutter https://github.com/avicennax/cookiecutter-da
 alias sublime="subl"
 alias scipython="ipython --profile=scipy"
 
-## s-search aliases
+## web-search aliases
 alias so="s -p stackoverflow"
 alias explainshell="s -p explainshell"
 alias github="s -p github"

@@ -3,9 +3,14 @@
 # DESCRIPTION: user defined aliases; machine specific.
 
 ## generic shell aliases
-alias ls='ls -FG'
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias ls='ls -F --color=auto'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls='ls -FG'
+fi
+
 alias mkdir='mkdir -p'
-alias ll="ls -lva"
+alias ll="ls -lv"
 alias la="ll -a"
 alias lm="ll | less"
 alias reload="source $bp"
@@ -14,8 +19,6 @@ alias qf="find . -name "
 
 ## grep aliases
 alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
-alias fgrep="fgrep --color=auto"
 alias gr="grep . -rnE -e "
 
 ## history aliases

@@ -34,6 +34,9 @@ Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'zchee/deoplete-jedi'
 " fuzzy matching; requires fzf
 Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+" fuzzy matching 2.0
+Plugin 'shougo/denite.nvim'
 " tab autocompletion
 Plugin 'ervandew/supertab'
 " go-env tools

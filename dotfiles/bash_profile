@@ -37,30 +37,19 @@ shopt -s histappend
 #---------------------------------------
 
 # Load user shell variables
-if [ -f ~/.bash_variables ]; then
-    . ~/.bash_variables
-fi
+[ -f ~/.bash_variables ] && . ~/.bash_variables
 
 # Load bash functions into session.
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
+[ -f ~/.bash_functions ] && . ~/.bash_functions
 
 # Alias definitions.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 # Local machine definitions and settings
-if [ -f ~/.bash_local ]; then
-    . ~/.bash_local
-fi
+[ -f ~/.bash_local ] && . ~/.bash_local
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
+( [ -f ~/.fzf.bash ] && source ~/.fzf.bash ) || ( [-f /etc/bash_completion ] && ! shopt -oq posix && . /etc/bash_completion )

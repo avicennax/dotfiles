@@ -18,9 +18,6 @@ export PATH="$HOME/src/go/bin:$PATH"
 export PYTHONPATH=$py:$PYTHONPATH
 export GOPATH="$HOME/src/go"
 
-## USER VARIABLES, FUNCTIONS AND ALIASES
-## =====================================
-
 ## VARIABLES
 ## =========
 

@@ -32,6 +32,8 @@ HISTFILESIZE=5000
 # Append to history don't overwrite
 shopt -s histappend
 
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 
 ## USER VARIABLES, FUNCTIONS AND ALIASES
 #---------------------------------------

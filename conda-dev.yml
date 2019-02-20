@@ -1,7 +1,9 @@
-name: dev
 dependencies:
-  - python=3.6
+  - python>=3.0
+  - flake8
+  - pylint
   - pip
   - pip:
     - pynvim
     - neovim
+    - autopep8

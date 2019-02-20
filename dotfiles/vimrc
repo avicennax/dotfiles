@@ -11,7 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " syntax error highlighting
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 " filesystem tree integration
 Plugin 'scrooloose/nerdtree'
 " quoting made easy
@@ -26,12 +26,14 @@ Plugin 'tpope/vim-sensible'
 " repo explorer via in-memory tags
 Plugin 'majutsushi/tagbar'
 " autocompletion
-Plugin 'Shougo/deoplete.nvim'
-" deoplete dependencies
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-" python autocompletion
-Plugin 'zchee/deoplete-jedi'
+if has("python3") && (v:version >= 800)
+    Plugin 'Shougo/deoplete.nvim'
+    " deoplete dependencies
+    Plugin 'roxma/nvim-yarp'
+    Plugin 'roxma/vim-hug-neovim-rpc'
+    " python autocompletion
+    Plugin 'zchee/deoplete-jedi'
+endif
 " fuzzy matching; requires fzf
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -112,9 +114,6 @@ set undolevels=500
 "" Environment / Mappings
 
 let mapleader=","
-" Syntastic remaps
-nnoremap :SC :SyntasticCheck
-nnoremap :SR :SyntasticReset
 " Easier buffer spliting
 nnoremap <leader>vs :vsp<cr>
 nnoremap <leader>hs :sp<cr>
@@ -169,21 +168,23 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
     let g:airline_powerline_fonts=1
 endif
-
 let g:airline_section_warning = ''
-let g:airline#extensions#syntastic#enabled = 1
-let airline#extensions#syntastic#stl_format_warn = '%E{[%e]}'
 
+"" ALE
+let g:ale_linters = {'python': ['flake8']}
+let airline#extensions#ale#error_symbol = "\u2717"
+let airline#extensions#ale#warning_symbol = "\u26A0"
+let g:ale_sign_error = "\u2717"
+let g:ale_sign_warning = "\u26A0"
+let g:ale_set_highlights = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_open = 0
+let g:ale_lint_on_text_changed = 0
+let g:ale_open_list = 1
 
-"" syntastic
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_check_on_open = 0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 2
-let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_error_symbol = "\u2717"
-let g:syntastic_warning_symbol = "\u26A0"
+" Syntastic remaps
+nnoremap :ar :ALEReset<cr>
+nnoremap :al :ALELint<cr>
 
 
 "" gitgutter

@@ -54,4 +54,8 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-( [ -f ~/.fzf.bash ] && source ~/.fzf.bash ) || ( [-f /etc/bash_completion ] && ! shopt -oq posix && . /etc/bash_completion )
+if [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+else
+    [-f /etc/bash_completion ] && ! shopt -oq posix && . /etc/bash_completion
+fi

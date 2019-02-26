@@ -33,6 +33,8 @@ if has("python3") && (v:version >= 800)
     Plugin 'roxma/vim-hug-neovim-rpc'
     " python autocompletion
     Plugin 'zchee/deoplete-jedi'
+    " js autocompletion
+    Plugin 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 endif
 " fuzzy matching; requires fzf
 Plugin 'junegunn/fzf'
@@ -158,7 +160,7 @@ autocmd BufNewfile *.sh so $HOME/.vim/headers/bash.vim
 "" deoplete auto-completion
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#show_docstring = 1
-call deoplete#custom#option('sources', {'python': ['jedi']})
+call deoplete#custom#option('sources', {'python': ['jedi'], 'javascript': ['tern']})
 highlight Pmenu ctermbg=244 ctermfg=15
 highlight PmenuSel ctermbg=35 ctermfg=15
 
@@ -171,7 +173,7 @@ endif
 let g:airline_section_warning = ''
 
 "" ALE
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint']}
 let airline#extensions#ale#error_symbol = "\u2717"
 let airline#extensions#ale#warning_symbol = "\u26A0"
 let g:ale_sign_error = "\u2717"
@@ -182,7 +184,6 @@ let g:ale_lint_on_open = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_open_list = 1
 
-" Syntastic remaps
 nnoremap :ar :ALEReset<cr>
 nnoremap :al :ALELint<cr>
 

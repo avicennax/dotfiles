@@ -23,7 +23,7 @@ export GOPATH="$HOME/src/go"
 
 src="$HOME/src"
 py="$src/Python"
-pjs="$HOME/projects"
+pjs="$src/projects"
 dotfiles="$src/cli/dotfiles"
 
 ## ALIASES

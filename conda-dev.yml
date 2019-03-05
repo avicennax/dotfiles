@@ -6,5 +6,4 @@ dependencies:
   - pip
   - pip:
     - pynvim
-    - neovim
     - autopep8

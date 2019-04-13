@@ -39,17 +39,17 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 #---------------------------------------
 
 # Load user shell variables
-[ -f ~/.bash_variables ] && . ~/.bash_variables
+[ -f ~/.variables ] && . ~/.variables
 
 # Load bash functions into session.
-[ -f ~/.bash_functions ] && . ~/.bash_functions
+[ -f ~/.functions ] && . ~/.functions
 
 # Alias definitions.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.aliases ] && . ~/.aliases
 
 # Local machine definitions and settings
-[ -f ~/.bash_local ] && . ~/.bash_local
+[ -f ~/.local ] && . ~/.local
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

@@ -14,6 +14,7 @@ alias ll="ls -lv"
 alias la="ll -a"
 alias lm="ll | less"
 alias reload="source $bp"
+alias reloadz="source $zshrc"
 alias home="cd ${HOME}"
 alias qf="find . -name "
 

@@ -20,7 +20,3 @@ function htg(){
     history | tail -n $tailn | grep $@
 }
 
-# Load conda environment with development dependencies
-function conda_dev(){
-    conda env update -f $dotfiles/conda-dev.yml
-}

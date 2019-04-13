@@ -1,0 +1,6 @@
+pycodestyle=2.3.1
+flake8
+pylint
+pynvim
+neovim
+autopep8

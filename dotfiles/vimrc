@@ -45,6 +45,8 @@ Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 " No distractions mode
 Plugin 'junegunn/goyo.vim'
+" Kotlin
+Plugin 'udalov/kotlin-vim'
 
 
 " All of your Plugins must be added before the following line
@@ -115,6 +117,13 @@ set undolevels=500
 
 "" Environment / Mappings
 
+" Don't write write deleted lines to default register
+function! DDWrapper()
+    normal! "ddd
+endfunction
+nnoremap <silent> dd :call DDWrapper()<CR>
+
+
 let mapleader=","
 " Easier buffer spliting
 nnoremap <leader>vs :vsp<cr>
@@ -143,12 +152,10 @@ nnoremap <leader>l <c-]>
 nnoremap <leader>t <c-t>
 
 " Point l:tags at the repo tags file
-if !exists('*LoadRepoTags')
-    function LoadRepoTags()
-        let l:repo_tags = systemlist("git rev-parse --git-dir")[0] . "/tags"
-        let &l:tags = l:repo_tags
-    endfunction
-endif
+function! LoadRepoTags()
+    let l:repo_tags = systemlist("git rev-parse --git-dir")[0] . "/tags"
+    let &l:tags = l:repo_tags
+endfunction
 nnoremap <leader>lr :call LoadRepoTags()<cr>
 
 

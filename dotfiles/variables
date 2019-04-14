@@ -4,11 +4,11 @@
 #   by .bashrc or .bash_profile
 
 src="$HOME/src"
-bv="$HOME/.bash_variables"
-bl="$HOME/.bash_local"
-ba="$HOME/.bash_aliases"
+bv="$HOME/.variables"
+bl="$HOME/.local"
+ba="$HOME/.aliases"
+bf="$HOME/.functions"
 bp="$HOME/.bash_profile"
-bf="$HOME/.bash_functions"
 zshrc="$HOME/.zshrc"
 vimrc="$HOME/.vimrc"
 

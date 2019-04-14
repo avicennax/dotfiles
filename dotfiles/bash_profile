@@ -1,5 +1,6 @@
-## shaxby's basic .bash_profile
-#------------------------------
+# ~/.bash_profile
+# Author: Simon Haxby
+# License: MIT
 
 # prompt
 export PS1="\[\e[1;92m\]\u\[\e[m\]@\[\e[1;33m\]\h\[\e[0m\]:\w$ "
@@ -49,7 +50,7 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 [ -f ~/.aliases ] && . ~/.aliases
 
 # Local machine definitions and settings
-[ -f ~/.local ] && . ~/.local
+[ -f ~/.locals ] && . ~/.locals
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

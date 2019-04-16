@@ -5,7 +5,7 @@
 
 src="$HOME/src"
 bv="$HOME/.variables"
-bl="$HOME/.local"
+bl="$HOME/.locals"
 ba="$HOME/.aliases"
 bf="$HOME/.functions"
 bp="$HOME/.bash_profile"

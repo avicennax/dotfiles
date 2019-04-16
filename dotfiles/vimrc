@@ -117,13 +117,6 @@ set undolevels=500
 
 "" Environment / Mappings
 
-" Don't write write deleted lines to default register
-function! DDWrapper()
-    normal! "ddd
-endfunction
-nnoremap <silent> dd :call DDWrapper()<CR>
-
-
 let mapleader=","
 " Easier buffer spliting
 nnoremap <leader>vs :vsp<cr>
@@ -136,13 +129,6 @@ augroup env
     " Automatically reload vimrc after saving
     autocmd BufWritePost $MYVIMRC source %
 augroup END
-
-
-"" Python file bindings
-augroup python
-    autocmd BufWritePre *.py :normal gggqG
-augroup END
-
 
 "" ctags
 

@@ -130,6 +130,12 @@ augroup env
     autocmd BufWritePost $MYVIMRC source %
 augroup END
 
+"" Python file bindings
+augroup python
+    autocmd! BufWritePre *.py :normal gggqG
+augroup END
+
+
 "" ctags
 
 " New tags mapping

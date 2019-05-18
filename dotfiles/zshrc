@@ -69,6 +69,8 @@ ENABLE_CORRECTION="true"
 plugins=(
     git-prompt
     extract
+    osx
+    kubectl
 )
 
 source $ZSH/oh-my-zsh.sh

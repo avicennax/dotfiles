@@ -35,6 +35,8 @@ if has("python3") && (v:version >= 800)
     Plugin 'zchee/deoplete-jedi'
     " js autocompletion
     Plugin 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+    " go autocompletion
+    Plugin 'stamblerre/gocode', {'rtp': 'vim/'}
 endif
 " fuzzy matching; requires fzf
 Plugin 'junegunn/fzf'

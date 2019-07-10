@@ -11,6 +11,7 @@
     co = checkout
     plo = pull origin
     pho = push origin
+    rem = rebase master
     del = branch -d
     unstage = reset HEAD
     tags = tag -l

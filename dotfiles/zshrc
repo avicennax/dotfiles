@@ -112,6 +112,10 @@ setopt check_jobs
 # Load session settings, aliases and variables
 #---------------------------------------------
 
+# Key-bindings
+bindkey '\e[1;2C' forward-word
+bindkey '\e[1;2D' backward-word
+
 # Load user shell variables
 [ -f ~/.variables ] && . ~/.variables
 

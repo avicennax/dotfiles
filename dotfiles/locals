@@ -11,7 +11,7 @@
 export PATH="$HOME/src/mongodb/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/src/mjpro150/bin:$PATH"
-export PATH="$HOME/anaconda/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/src/go/bin:$PATH"
 export PATH="$HOME/src/spark/bin:$PATH"
@@ -35,6 +35,7 @@ alias cookiecutter-ds="cookiecutter https://github.com/avicennax/cookiecutter-da
 alias sublime="subl"
 alias scipython="ipython --profile=scipy"
 alias letssketch="cd $pjs/sketchpad"
+alias condaenvs="conda info --envs"
 
 ## web-search aliases
 alias so="s -p stackoverflow"

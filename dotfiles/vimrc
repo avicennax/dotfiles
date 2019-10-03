@@ -49,7 +49,8 @@ Plugin 'fatih/vim-go'
 Plugin 'junegunn/goyo.vim'
 " Kotlin
 Plugin 'udalov/kotlin-vim'
-
+" Terraform
+Plugin 'hashivim/vim-terraform'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

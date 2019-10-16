@@ -1,4 +1,4 @@
-pycodestyle
+pycodestyle==2.5
 flake8
 pylint
 pynvim

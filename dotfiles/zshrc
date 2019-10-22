@@ -67,7 +67,6 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git-prompt
     extract
     osx
     kubectl
@@ -152,4 +151,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Use AWS Conda environment as both
-conda info --envs 2> /dev/null | cut -d' ' -f1 | grep aws > /dev/null && source activate aws
+# conda info --envs 2> /dev/null | cut -d' ' -f1 | grep aws > /dev/null && source activate aws

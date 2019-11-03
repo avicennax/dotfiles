@@ -12,11 +12,12 @@
     plo = pull origin
     pho = push origin
     rem = rebase master
-    del = branch -d
+    del = branch -D -d
     unstage = reset HEAD
     tags = tag -l
-    branches = branch -a
+    ba = branch -a
     remotes = remote -v
+    rh = reset --hard
     purge = "!sh -c 'git reset --hard; git clean -df'"
 	ctags = "!sh -c .git/hooks/ctags"
 [color]

@@ -25,32 +25,11 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-sensible'
 " repo explorer via in-memory tags
 Plugin 'majutsushi/tagbar'
-" autocompletion
-if has("python3") && (v:version >= 800)
-    Plugin 'Shougo/deoplete.nvim'
-    " deoplete dependencies
-    Plugin 'roxma/nvim-yarp'
-    Plugin 'roxma/vim-hug-neovim-rpc'
-    " python autocompletion
-    Plugin 'zchee/deoplete-jedi'
-    " js autocompletion
-    Plugin 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-    " go autocompletion
-    Plugin 'stamblerre/gocode', {'rtp': 'vim/'}
-endif
 " fuzzy matching; requires fzf
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 " tab autocompletion
 Plugin 'ervandew/supertab'
-" go-env tools
-Plugin 'fatih/vim-go'
-" No distractions mode
-Plugin 'junegunn/goyo.vim'
-" Kotlin
-Plugin 'udalov/kotlin-vim'
-" Terraform
-Plugin 'hashivim/vim-terraform'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -133,38 +112,10 @@ augroup env
     autocmd BufWritePost $MYVIMRC source %
 augroup END
 
-"" Python file bindings
-augroup python
-    autocmd! BufWritePre *.py :normal gggqG
-augroup END
-
-
-"" ctags
-
-" New tags mapping
-nnoremap <leader>l <c-]>
-" Break out of tag window (hack)
-nnoremap <leader>t <c-t>
-
-" Point l:tags at the repo tags file
-function! LoadRepoTags()
-    let l:repo_tags = systemlist("git rev-parse --git-dir")[0] . "/tags"
-    let &l:tags = l:repo_tags
-endfunction
-nnoremap <leader>lr :call LoadRepoTags()<cr>
-
 
 "" Filetype headers
 autocmd BufNewfile *.py so $HOME/.vim/headers/python.vim
 autocmd BufNewfile *.sh so $HOME/.vim/headers/bash.vim
-
-
-"" deoplete auto-completion
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#jedi#show_docstring = 1
-call deoplete#custom#option('sources', {'python': ['jedi'], 'javascript': ['tern']})
-highlight Pmenu ctermbg=244 ctermfg=15
-highlight PmenuSel ctermbg=35 ctermfg=15
 
 
 "" air-line
@@ -185,7 +136,6 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_open = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_open_list = 0
-
 nnoremap :ar :ALEReset<cr>
 nnoremap :al :ALELint<cr>
 

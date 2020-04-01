@@ -16,7 +16,6 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/src/go/bin:$PATH"
 export PATH="$HOME/src/spark/bin:$PATH"
 
-export PYTHONPATH=$HOME/src/python:$PYTHONPATH
 export GOPATH="$HOME/src/go"
 
 ## VARIABLES
@@ -31,9 +30,9 @@ dotfiles="$src/cli/dotfiles"
 ## =======
 
 ## user aliases
-alias cookiecutter-ds="cookiecutter https://github.com/avicennax/cookiecutter-data-science"
-alias sublime="subl"
-alias scipython="ipython --profile=scipy"
+alias vscode="'/Applications/Visual Studio Code.app/Contents/MacOS/Electron'"
+alias ccds="cookiecutter https://github.com/avicennax/cookiecutter-data-science"
+alias scipy="ipython --profile=scipy"
 alias letssketch="cd $pjs/sketchpad"
 alias condaenvs="conda info --envs"
 

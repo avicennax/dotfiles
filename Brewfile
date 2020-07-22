@@ -1,24 +1,39 @@
-brew "ack"
+# To install run: brew bundle install --global
+
+# CLI
 brew "bash"
-brew "cmake"
-brew "curl"
-brew "ctags"
 brew "git"
-brew "jq"
-brew "helm"
+brew "entr"
+brew "fd"
+brew "fzf"
 brew "htop"
-brew "kubectx"
-brew "kubens"
-brew "navi"
 brew "neovim"
-brew "nmap"
-brew "node"
 brew "openssl"
 brew "readline"
+brew "the_silver_searcher"
 brew "tree"
 brew "tmux"
 brew "vim"
 brew "watch"
-brew "weechat"
-brew "wget"
 brew "yank"
+
+# Languages / Build
+brew "node"
+brew "cmake"
+brew "go"
+
+# Tools
+brew "ctags"
+brew "jq"
+brew "helm"
+
+# Web / Network
+brew "curl"
+brew "nmap"
+brew "pgcli"
+brew "telnet"
+brew "wget"
+
+# Other
+brew "pandoc"
+brew "weechat"

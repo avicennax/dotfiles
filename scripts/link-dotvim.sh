@@ -7,7 +7,7 @@ printf "Running $0\n\n"
 set -u
 
 vim_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. >/dev/null && pwd )"
-mkdir -p ${vim_dir}
+mkdir -p $HOME/.vim
 
 if [[ -d $HOME/.vim ]]; then
     for directory in $(ls ${vim_dir}/vim); do

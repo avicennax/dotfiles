@@ -1,38 +1,50 @@
 [user]
-    name = shaxby
-    email = shaxby@blizzard.com
+name = avicennax
+email = simon.haxby@gmail.com
+
 [alias]
-    plog = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-    splog = log --all --decorate --oneline --graph
-    st = status
-    current = rev-parse --abbrev-ref HEAD
-    cm = commit -m
-    b = branch
-    co = checkout
-    plo = pull origin
-    pho = push origin
-    rem = rebase master
-    del = branch -D -d
-    unstage = reset HEAD
-    tags = tag -l
-    ba = branch -a
-    remotes = remote -v
-    rh = reset --hard
-    purge = "!sh -c 'git reset --hard; git clean -df'"
-	ctags = "!sh -c .git/hooks/ctags"
+plog = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+splog = log --all --decorate --oneline --graph
+st = status
+current = rev-parse --abbrev-ref HEAD
+cm = commit -m
+b = branch
+co = checkout
+plo = pull origin
+pho = push origin
+rem = rebase master
+del = branch -D -d
+unstage = reset HEAD
+tags = tag -l
+ba = branch -a
+remotes = remote -v
+rh = reset --hard
+purge = "!sh -c 'git reset --hard; git clean -df'"
+ctags = "!sh -c .git/hooks/ctags"
+
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    ui = true
-    pager = true
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = true
+pager = true
+
 [core]
-    editor = vim
+editor = vim
+
 [push]
-    default = current
+default = current
+
 [pull]
-    default = current
+default = current
+
 [init]
-	templatedir = ~/.git_template
-	defaultBranch = master
+templatedir = ~/.git_template
+defaultBranch = master
+
+[includeIf "gitdir:blizz/"]
+path = .gitconfig-work
+
+[includeIf "gitdir:personal/"]
+path = .gitconfig-personal

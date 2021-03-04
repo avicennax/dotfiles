@@ -16,16 +16,16 @@ brew "tmux"
 brew "vim"
 brew "watch"
 brew "yank"
+brew "ctags"
+brew "jq"
+brew "helm"
+brew "starship"
+
 
 # Languages / Build
 brew "node"
 brew "cmake"
 brew "go"
-
-# Tools
-brew "ctags"
-brew "jq"
-brew "helm"
 
 # Web / Network
 brew "curl"
@@ -36,4 +36,3 @@ brew "wget"
 
 # Other
 brew "pandoc"
-brew "weechat"

@@ -2,8 +2,9 @@
 # Author: Simon Haxby
 # License: MIT
 
-# prompt
-export PS1="\[\e[1;92m\]\u\[\e[m\]@\[\e[1;33m\]\h\[\e[0m\]:\w$ "
+# prompt - using Starship
+# export PS1="\[\e[1;92m\]\u\[\e[m\]@\[\e[1;33m\]\h\[\e[0m\]:\w$ "
+eval "$(starship init bash)" > /dev/null
 
 # Set color prompt
 export TERM="xterm-256color"
@@ -80,3 +81,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Load cargo shit
+if [ -f ~/.cargo/env ]; then
+    source "$HOME/.cargo/env"
+fi

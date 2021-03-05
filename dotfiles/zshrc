@@ -157,3 +157,4 @@ if [ -f ${HOME}/src/google-cloud-sdk/completion.zsh.inc ]; then . ${HOME}/src/go
 
 # Starship
 eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.starship

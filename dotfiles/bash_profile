@@ -4,7 +4,7 @@
 
 # prompt - using Starship
 # export PS1="\[\e[1;92m\]\u\[\e[m\]@\[\e[1;33m\]\h\[\e[0m\]:\w$ "
-eval "$(starship init bash)" > /dev/null
+eval "$(starship init bash)"
 
 # Set color prompt
 export TERM="xterm-256color"

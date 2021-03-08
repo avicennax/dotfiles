@@ -11,4 +11,3 @@ bf="$HOME/.functions"
 bp="$HOME/.bash_profile"
 zshrc="$HOME/.zshrc"
 vimrc="$HOME/.vimrc"
-

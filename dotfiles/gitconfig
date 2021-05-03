@@ -11,7 +11,9 @@ cm = commit -m
 b = branch
 co = checkout
 plo = pull origin
+plom = pull origin master
 pho = push origin
+phom = push origin master
 rem = rebase master
 del = branch -D -d
 unstage = reset HEAD
@@ -38,6 +40,7 @@ default = current
 
 [pull]
 default = current
+rebase = false
 
 [init]
 templatedir = ~/.git_template

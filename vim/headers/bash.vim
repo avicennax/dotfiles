@@ -4,4 +4,5 @@
 # <name>
 # Description: <>
 
-set -u
+set -euo pipefail
+IFS=$'\n\t'

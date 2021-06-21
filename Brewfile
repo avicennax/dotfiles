@@ -18,9 +18,9 @@ brew "watch"
 brew "yank"
 brew "ctags"
 brew "jq"
+brew "yq"
 brew "helm"
 brew "starship"
-
 
 # Languages / Build
 brew "node"

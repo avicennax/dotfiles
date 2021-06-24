@@ -21,6 +21,7 @@ brew "jq"
 brew "yq"
 brew "helm"
 brew "starship"
+brew "pandoc"
 
 # Languages / Build
 brew "node"
@@ -33,6 +34,3 @@ brew "nmap"
 brew "pgcli"
 brew "telnet"
 brew "wget"
-
-# Other
-brew "pandoc"

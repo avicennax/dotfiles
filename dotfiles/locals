@@ -30,7 +30,6 @@ dotfiles="$src/cli/dotfiles"
 ## =======
 
 ## user aliases
-alias vscode="'/Applications/Visual Studio Code.app/Contents/MacOS/Electron'"
 alias ccds="cookiecutter https://github.com/avicennax/cookiecutter-data-science"
 alias scipy="ipython --profile=scipy"
 alias letssketch="cd $pjs/sketchpad"

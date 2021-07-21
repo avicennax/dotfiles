@@ -10,6 +10,7 @@ current = rev-parse --abbrev-ref HEAD
 cm = commit -m
 b = branch
 co = checkout
+com = checkout master
 plo = pull origin
 plom = pull origin master
 pho = push origin

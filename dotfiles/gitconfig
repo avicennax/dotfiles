@@ -24,6 +24,7 @@ remotes = remote -v
 rh = reset --hard
 purge = "!sh -c 'git reset --hard; git clean -df'"
 ctags = "!sh -c .git/hooks/ctags"
+cp = cherry-pick
 
 [color]
 diff = auto

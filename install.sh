@@ -1,18 +1,24 @@
 #!/bin/bash
 
 # install.sh
-# Description: boostraps environment - currently OSX only.
+# Description: boostraps Nix environment - currently OSX only.
 
-set -u
-
+set -u -o pipefail
+cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Install Homebrew
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew tap Homebrew/bundle
+    brew bundle
 
-    # TODO: ensure we're at in $dotfiles and tap Brewfile.
+    # Install Arkade
+    # https://github.com/alexellis/arkade#install-a-cli-tool
+    curl -sLS https://get.arkade.dev | sudo sh
 
-    # TODO: symlink dotfiles
+    # Symlink dotfiles
+    scripts/link-dotfiles.sh
+    scripts/link-dotvim.sh
 
     # TODO: download and install powerline and powerline fonts
 

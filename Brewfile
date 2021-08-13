@@ -19,7 +19,6 @@ brew "yank"
 brew "ctags"
 brew "jq"
 brew "yq"
-brew "helm"
 brew "starship"
 brew "pandoc"
 

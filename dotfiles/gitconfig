@@ -10,6 +10,7 @@ current = rev-parse --abbrev-ref HEAD
 cm = commit -m
 b = branch
 co = checkout
+nb = checkout -b
 com = checkout master
 plo = pull origin
 plom = pull origin master
@@ -25,6 +26,7 @@ rh = reset --hard
 purge = "!sh -c 'git reset --hard; git clean -df'"
 ctags = "!sh -c .git/hooks/ctags"
 cp = cherry-pick
+dbr = "!sh -c 'git branch | grep sjh | xargs -I{} git del {}'"
 
 [color]
 diff = auto

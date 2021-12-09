@@ -27,8 +27,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
     # Download and install Powerline fonts; use Powerline font in iTerm profile.
-    git clone https://github.com/powerline/fonts.git ../powerline
-    ../powerline/install.sh
+    git clone https://github.com/powerline/fonts.git ../powerline/fonts
+    ../powerline/fonts/install.sh
 
     # Install fzf shell bindings.
     $(brew --prefix)/opt/fzf/install

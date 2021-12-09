@@ -22,6 +22,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # TODO: download and install powerline and powerline fonts
 
+    # Install fzf shell bindings.
+    $(brew --prefix)/opt/fzf/install
+
     # Install Miniconda
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O $HOME/Downloads/miniconda.sh
     bash $HOME/Downloads/miniconda.sh -b -p $HOME/miniconda

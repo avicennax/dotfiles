@@ -12,6 +12,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     brew tap Homebrew/bundle
     brew bundle
 
+    # Install ohmyzsh
+    sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
     # Install Arkade
     # https://github.com/alexellis/arkade#install-a-cli-tool
     curl -sLS https://get.arkade.dev | sudo sh
@@ -20,7 +23,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     scripts/link-dotfiles.sh
     scripts/link-dotvim.sh
 
-    # TODO: download and install powerline and powerline fonts
+    # Install Vundle; run :PluginInstall in Vim.
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+    # Download and install Powerline fonts; use Powerline font in iTerm profile.
+    git clone https://github.com/powerline/fonts.git ../powerline
+    ../powerline/install.sh
 
     # Install fzf shell bindings.
     $(brew --prefix)/opt/fzf/install
@@ -30,5 +38,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     bash $HOME/Downloads/miniconda.sh -b -p $HOME/miniconda
     export PATH="$HOME/miniconda/bin:$PATH"
 
-    # TODO: pip install Vim environment dependencies.
+    # TODO: need to pip install Vim environment dependencies?
 fi

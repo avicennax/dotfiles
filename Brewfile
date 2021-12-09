@@ -15,6 +15,7 @@ brew "htop"
 brew "openssl"
 brew "readline"
 brew "the_silver_searcher" # ag
+brew "s-search"
 brew "tree"
 brew "tmux"
 brew "watch"

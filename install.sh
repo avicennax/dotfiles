@@ -35,8 +35,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # Install Miniconda
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O $HOME/Downloads/miniconda.sh
-    bash $HOME/Downloads/miniconda.sh -b -p $HOME/miniconda
-    export PATH="$HOME/miniconda/bin:$PATH"
+    bash $HOME/Downloads/miniconda.sh -b -p $HOME/miniconda3
+    export PATH="$HOME/miniconda3/bin:$PATH"
 
     # TODO: need to pip install Vim environment dependencies?
 fi

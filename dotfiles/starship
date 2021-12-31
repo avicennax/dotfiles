@@ -1,2 +1,7 @@
 [gcloud]
 format = "[$symbol$project]($style) "
+
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "bold fg:228"

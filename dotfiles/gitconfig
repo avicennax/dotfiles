@@ -11,12 +11,12 @@ cm = commit -m
 b = branch
 co = checkout
 nb = checkout -b
-com = checkout master
+com = checkout main
 plo = pull origin
-plom = pull origin master
+plom = pull origin main
 pho = push origin
-phom = push origin master
-rem = rebase master
+phom = push origin main
+rem = rebase main
 del = branch -D -d
 unstage = reset HEAD
 tags = tag -l
@@ -48,7 +48,7 @@ rebase = false
 
 [init]
 templatedir = ~/.git_template
-defaultBranch = master
+defaultBranch = main
 
 [includeIf "gitdir:blizz/"]
 path = .gitconfig-work

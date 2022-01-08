@@ -50,7 +50,7 @@ rebase = false
 templatedir = ~/.git_template
 defaultBranch = main
 
-[includeIf "gitdir:rito/"]
+[includeIf "gitdir:riot/"]
 path = .gitconfig-work
 
 [includeIf "gitdir:personal/"]

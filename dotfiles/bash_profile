@@ -90,3 +90,7 @@ unset __conda_setup
 if [ -f ~/.cargo/env ]; then
     source "$HOME/.cargo/env"
 fi
+
+## POETRY
+#--------
+export PATH="$HOME/.poetry/bin:$PATH"

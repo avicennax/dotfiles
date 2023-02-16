@@ -23,8 +23,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     scripts/link-dotfiles.sh
     scripts/link-dotvim.sh
 
-    # Install Vundle; run :PluginInstall in Vim.
+    # Install Vundle
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
 
     # Download and install Powerline fonts; use Powerline font in iTerm profile.
     git clone https://github.com/powerline/fonts.git ../powerline/fonts

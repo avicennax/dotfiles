@@ -112,6 +112,9 @@ setopt check_jobs
 # Load session settings, aliases and variables
 #---------------------------------------------
 
+# nocorrect
+alias n="nocorrect"
+
 # Key-bindings
 bindkey '\e[1;2C' forward-word
 bindkey '\e[1;2D' backward-word

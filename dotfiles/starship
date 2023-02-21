@@ -1,3 +1,5 @@
+command_timeout = 2000
+
 [gcloud]
 format = "[$symbol$project]($style) "
 

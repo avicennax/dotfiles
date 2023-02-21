@@ -29,8 +29,14 @@ dotfiles="$src/cli/dotfiles"
 ## ALIASES
 ## =======
 
+# vim
+alias vim="nvim"
+
+# git
+alias yb="git branch | fzf | awk -v ORS= '{\$1=\$1};1' | pbcopy"
+alias gd="git log | yank"
+
 ## user aliases
-alias ccds="cookiecutter https://github.com/avicennax/cookiecutter-data-science"
 alias scipy="ipython --profile=scipy"
 alias letssketch="cd $pjs/sketchpad"
 alias condaenvs="conda info --envs"

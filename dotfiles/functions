@@ -9,6 +9,6 @@ function google()
 }
 
 # Moves file/dir to OSX trash directory
-function trash(){
+function trash() {
     mv $1 ~/.Trash
 }

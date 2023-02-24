@@ -15,6 +15,7 @@ brew "htop"
 brew "openssl"
 brew "readline"
 brew "the_silver_searcher" # ag
+brew "ripgrep" # rg
 brew "s-search"
 brew "tree"
 brew "tmux"
@@ -33,7 +34,6 @@ brew "cmake"
 
 # Language
 brew "node"
-brew "go"
 
 # Web / Network
 brew "curl"

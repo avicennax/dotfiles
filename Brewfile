@@ -7,6 +7,7 @@ brew "ctags"
 
 # CLI
 brew "bash"
+brew "choose" # cut
 brew "git"
 brew "entr" # skaffold for CLI
 brew "fd" # find, but sane
@@ -17,6 +18,7 @@ brew "readline"
 brew "the_silver_searcher" # ag
 brew "ripgrep" # rg
 brew "s-search"
+brew "procs" # ps
 brew "tree"
 brew "tmux"
 brew "watch"

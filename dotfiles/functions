@@ -12,3 +12,57 @@ function google()
 function trash() {
     mv $1 ~/.Trash
 }
+
+# -- UNDER DEVELOPMENT --
+# find files grep (ffg) - supply ripgrep query and filter subsequent previewed files with fzf and bat
+# open selection (if made) with nvim.
+function _ffg() {
+  if [[ $# -gt 0 ]]; then
+    match=$(
+      rg --line-number --color=always --hidden "$@" \
+      | fzf --ansi --preview "\
+          echo {} \
+          | cut -d: -f1 \
+          | xargs -I% bat --color=always \
+                 --highlight-line=\$(echo {} | cut -d: -f2) \
+                 --pager=\"less +\$(echo {} | cut -d: -f2)\" \
+                 '%'" \
+        --preview-window '~4'
+    )
+    if [[ -n $match ]]; then
+        function cut_nfield { echo $1 | cut -d: -f$2 }
+        file_selected=$(cut_nfield $match 1)
+        line=$(cut_nfield $match 2)
+
+        nvim "let g:notree=1" "$file_selected" +$line
+    fi
+  else
+    echo "No arguments supplied"
+  fi
+}
+
+# find files grep (ffg) - supply ripgrep query and filter subsequent matched files with fzf and bat
+# open selection (if made) with nvim.
+function ffg() {
+  if [[ $# -gt 0 ]]; then
+    match=$(rg --line-number --color=always --hidden "$@" | fzf --ansi)
+    if [[ -n $match ]]; then
+        function cut_nfield { echo $1 | cut -d: -f$2 }
+        file_selected=$(cut_nfield $match 1)
+        line=$(cut_nfield $match 2)
+
+        nvim "let g:notree=1" "$file_selected" +$line
+    fi
+  else
+    echo "No arguments supplied"
+  fi
+}
+
+
+# find files (ff) - opens selection in Neovim
+function ff() {
+    file_selected=$(fzf --ansi --preview "echo {} | cut -d: -f1 | xargs bat --color=always")
+    if [[ -n $file_selected ]]; then
+        nvim --cmd "let g:notree=1" "$file_selected"
+    fi
+}

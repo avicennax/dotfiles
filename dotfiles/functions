@@ -34,7 +34,7 @@ function _ffg() {
         file_selected=$(cut_nfield $match 1)
         line=$(cut_nfield $match 2)
 
-        nvim "let g:notree=1" "$file_selected" +$line
+        nvim --cmd "let g:notree=1" "$file_selected" +$line
     fi
   else
     echo "No arguments supplied"
@@ -51,7 +51,7 @@ function ffg() {
         file_selected=$(cut_nfield $match 1)
         line=$(cut_nfield $match 2)
 
-        nvim "let g:notree=1" "$file_selected" +$line
+        nvim --cmd "let g:notree=1" $file_selected +$line
     fi
   else
     echo "No arguments supplied"
@@ -63,6 +63,6 @@ function ffg() {
 function ff() {
     file_selected=$(fzf --ansi --preview "echo {} | cut -d: -f1 | xargs bat --color=always")
     if [[ -n $file_selected ]]; then
-        nvim --cmd "let g:notree=1" "$file_selected"
+        nvim --cmd "let g:notree=1" $file_selected
     fi
 }

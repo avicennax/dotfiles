@@ -53,6 +53,9 @@ vim.opt.undolevels = 500
 -- Ensure scroll buffer
 vim.opt.scrolloff = 8
 
+-- No line wraps
+vim.opt.wrap = false
+
 if not vim.g.vscode then
   require("plugins")
   require("remap")

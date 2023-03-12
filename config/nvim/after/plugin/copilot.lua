@@ -3,5 +3,5 @@ if vim.g.vscode then
     vim.cmd('Copilot disable')
 else
     -- Toogle disable for nvim until better path solution found.
-    vim.cmd('Copilot enable')
+    vim.cmd('Copilot disable')
 end

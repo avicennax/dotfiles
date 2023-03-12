@@ -27,5 +27,20 @@ if vim.g.vscode then
   -- nvim-tree
   vim.keymap.set('n', '<leader>tf', notify 'workbench.view.explorer', { silent = true })
 
+  -- Harpoon / VSCode Bookmarks
+  vim.keymap.set('n', '<leader>a', notify 'bookmarks.toggle', { silent = true })
+  -- Currently just using VSCode native binding since <C-e>
+  -- vim.keymap.set('n', '<leader>a', notify 'bookmarksExplorer.focus', { silent = true })
+  
+  -- Don't currently have this functionality Harpoon
+  vim.keymap.set('n', '<leader>b', notify 'bookmarks.list', { silent = true })
+
+  -- LSP
+  vim.keymap.set('n', '<leader>g', notify 'editor.action.revealDefinition', { silent = true })
+  vim.keymap.set('n', '<leader>gd', notify 'editor.action.revealDefinition', { silent = true })
+  vim.keymap.set('n', '<leader>gr', notify 'editor.action.goToReferences', { silent = true })
+  vim.keymap.set('n', '<leader>gi', notify 'editor.action.goToImplementation', { silent = true })
+  vim.keymap.set("n", "<leader>ca", notify 'editor.action.sourceAction', { silent = true })
+
   print("Loading VSCode mappings!")
 end

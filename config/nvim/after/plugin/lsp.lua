@@ -7,6 +7,9 @@ if not vim.g.vscode then
   })
 
   lsp.ensure_installed({
+    'rust_analyzer',
+    'sumneko_lua',
+    'eslint',
     'tsserver',
     'gopls',
     'pyright'

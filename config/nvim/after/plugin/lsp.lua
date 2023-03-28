@@ -8,11 +8,20 @@ if not vim.g.vscode then
 
   lsp.ensure_installed({
     'rust_analyzer',
-    'sumneko_lua',
     'eslint',
     'tsserver',
     'gopls',
     'pyright'
+  })
+
+  lsp.configure('rust_analyzer', {
+    settings = {
+      ["rust-analyzer"] = {
+        procMacro = {
+          enable = true
+        }
+      }
+    }
   })
 
   -- (Optional) Configure lua language server for neovim

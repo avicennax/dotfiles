@@ -64,5 +64,6 @@ if not vim.g.vscode then
   require("filetree")
   require("fugitive")
   require("telescope")
+  require("testing")
   vim.cmd.colorscheme("catppuccin")
 end

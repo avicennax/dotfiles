@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
 
   -- harpoon
   use('theprimeagen/harpoon')
- 
+
   -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -69,6 +69,21 @@ return require('packer').startup(function(use)
       {'L3MON4D3/LuaSnip'},             -- Required
       {'rafamadriz/friendly-snippets'}, -- Optional
     }
+  }
+
+  -- neotest
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+
+      -- Adapters
+      "nvim-neotest/neotest-go",
+      "nvim-neotest/neotest-python",
+      "rouge8/neotest-rust"
+    },
   }
 
 end)

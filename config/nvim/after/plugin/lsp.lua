@@ -14,7 +14,7 @@ if not vim.g.vscode then
     'pyright'
   })
 
-  lsp.configure('rust_analyzer', {
+  require("lspconfig").rust_analyzer.setup({
     settings = {
       ["rust-analyzer"] = {
         procMacro = {
@@ -44,8 +44,8 @@ if not vim.g.vscode then
 
     -- Diagnostics
     vim.keymap.set("n", "<leader>do", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
   end)
 

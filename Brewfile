@@ -2,8 +2,6 @@
 
 # Editors
 brew "neovim"
-brew "vim"
-brew "ctags"
 
 # CLI
 brew "bash"
@@ -12,7 +10,7 @@ brew "git"
 brew "entr" # skaffold for CLI
 brew "fd" # find, but sane
 brew "fzf"
-brew "htop"
+brew "btop"
 brew "openssl"
 brew "readline"
 brew "the_silver_searcher" # ag
@@ -28,18 +26,12 @@ brew "yq" # jq for YAML
 brew "starship"
 brew "pandoc"
 
-# K8s
-brew "skaffold"
-
-# Build
-brew "cmake"
-
 # Language
 brew "node"
 
 # Web / Network
 brew "curl"
-brew "grpcurl"
+brew "httpie"
 brew "nmap"
 brew "pgcli"
 brew "telnet"

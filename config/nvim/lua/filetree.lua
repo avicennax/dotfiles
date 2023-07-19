@@ -52,3 +52,4 @@ end
 -- nvim-tree keybinding
 vim.keymap.set('n', '<leader>tf', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>tff', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })

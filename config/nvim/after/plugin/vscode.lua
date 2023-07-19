@@ -41,6 +41,7 @@ if vim.g.vscode then
   vim.keymap.set('n', '<leader>gr', notify 'editor.action.goToReferences', { silent = true })
   vim.keymap.set('n', '<leader>gi', notify 'editor.action.goToImplementation', { silent = true })
   vim.keymap.set("n", "<leader>ca", notify 'editor.action.sourceAction', { silent = true })
+  vim.keymap.set("n", "<leader>rn", notify 'editor.action.rename', { silent = true })
 
   print("Loading VSCode mappings!")
 end

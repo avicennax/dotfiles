@@ -20,7 +20,6 @@ require("nvim-tree").setup({
 local function open_nvim_tree()
   -- open the tree
    require("nvim-tree.api").tree.open()
-    
   -- switch focus to previous window (if possible)
   local nr_windows = #vim.api.nvim_list_wins()
   if nr_windows > 1 then

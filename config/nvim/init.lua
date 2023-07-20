@@ -65,5 +65,6 @@ if not vim.g.vscode then
   require("fugitive")
   require("telescope")
   require("testing")
+  require("golang")
   vim.cmd.colorscheme("catppuccin")
 end

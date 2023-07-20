@@ -71,6 +71,13 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- go
+  use {
+    'ray-x/go.nvim',
+    branch = "nvim_0.8"
+  }
+  use('ray-x/guihua.lua') -- recommended if need floating window support
+
   -- neotest
   use {
     "nvim-neotest/neotest",

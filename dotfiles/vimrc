@@ -1,50 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" vim status bar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" syntax error highlighting
-Plugin 'w0rp/ale'
-" filesystem tree integration
-Plugin 'scrooloose/nerdtree'
-" quoting made easy
-Plugin 'tpope/vim-surround'
-" easy commenting
-Plugin 'scrooloose/nerdcommenter'
-" show git changes in side column
-Plugin 'airblade/vim-gitgutter'
-" sensible defaults; maybe some redundancy between
-" vim-sensible and set statements below.
-Plugin 'tpope/vim-sensible'
-" repo explorer via in-memory tags
-Plugin 'majutsushi/tagbar'
-" fuzzy matching; requires fzf
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-" tab autocompletion
-Plugin 'ervandew/supertab'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" Basic settings
-
 colorscheme elflord
 
 " Place backup files in an alternate directory so they don't clutter working space
@@ -96,8 +52,7 @@ set history=250
 " Set vim undo stack depth
 set undolevels=500
 
-
-"" Environment / Mappings
+"" -- Environment / Mappings --
 
 let mapleader=","
 " Easier buffer spliting
@@ -112,33 +67,6 @@ augroup env
     autocmd BufWritePost $MYVIMRC source %
 augroup END
 
-
-"" Filetype headers
+"" -- Filetype Headers --
 autocmd BufNewfile *.py so $HOME/.vim/headers/python.vim
 autocmd BufNewfile *.sh so $HOME/.vim/headers/bash.vim
-
-
-"" air-line
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-    let g:airline_powerline_fonts=1
-endif
-let g:airline_section_warning = ''
-
-"" ALE
-let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint']}
-let airline#extensions#ale#error_symbol = "\u2717"
-let airline#extensions#ale#warning_symbol = "\u26A0"
-let g:ale_sign_error = "\u2717"
-let g:ale_sign_warning = "\u26A0"
-let g:ale_set_highlights = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_open = 0
-let g:ale_lint_on_text_changed = 0
-let g:ale_open_list = 0
-nnoremap :ar :ALEReset<cr>
-nnoremap :al :ALELint<cr>
-
-
-"" gitgutter
-highlight clear SignColumn

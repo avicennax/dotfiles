@@ -1,0 +1,74 @@
+let mapleader=","
+
+" Mappings
+
+" Meta
+map <leader>tvt <Action>(VimFindActionIdAction)
+
+" Navigation
+map <leader>ff <Action>(GotoFile)
+map <leader>fat <Action>(TextSearchAction)
+map <leader>fa <Action>(GotoAction)
+map <leader>fc <Action>(GotoClass)
+map <leader>fs <Action>(GotoSymbol)
+map <leader>fg <Action>(FindInPath)
+
+map <leader>guf <Action>(FindUsagesInFile)
+map <leader>gd <Action>(GotoDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gg <Action>(FindUsages)
+
+map <leader>nb <Action>(ShowNavBar)
+
+map <leader>tff <Action>(SelectInProjectView)
+
+" map K <Action>(Hover) // NOT ACTUAL ACTION; builtin
+" map <leader><C-e> <Action>(RecentFiles) // default
+
+"default Rider / not PyCharm
+map <A-Left> <Action>(Back)
+"default Rider / not PyCharm
+map <A-Right> <Action>(Forward)
+
+" Bookmarks
+map <leader>b <Action>(Bookmarks)
+map <leader>bw <Action>(ActivateBookmarksToolWindow)
+map <leader>1 <Action>(GotoBookmark1)
+map <leader>2 <Action>(GotoBookmark2)
+map <leader>3 <Action>(GotoBookmark3)
+map <leader>4 <Action>(GotoBookmark4)
+map <leader>5 <Action>(GotoBookmark5)
+map <leader>6 <Action>(GotoBookmark6)
+map <leader>7 <Action>(GotoBookmark7)
+map <leader>8 <Action>(GotoBookmark8)
+map <leader>9 <Action>(GotoBookmark9)
+
+" Execution
+map <leader>rr <Action>(mainRunToolbarRunProcess)
+map <leader>c <Action>(RunToolbarStopAction)
+map <leader>rt <Action>(RunClass)
+
+" Refactor
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader>rn <Action>(RenameElement)
+map <leader>rp <Action>(ReplaceInPath)
+map <leader>fd <Action>(ReformatCode)
+
+" Errors
+map [d <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
+
+" Git
+map <leader>gs <Action>(Git.MainMenu)
+" map <leader>gb <Action>(Annotate) // borke
+map <leader>gbr <Action>(Github.Open.In.Browser)
+
+" Windows / Tabs
+map <leader>vs <Action>(SplitVertically)
+map <leader>hs <Action>(SplitHorizontally)
+
+map <leader>nt <Action>(NextTab)
+map <leader>pt <Action>(PreviousTab)
+
+" Testing
+" // TODO - https://github.com/avicennax/dotfiles/blob/main/config/nvim/lua/testing.lua

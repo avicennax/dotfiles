@@ -36,8 +36,9 @@ if vim.g.vscode then
   vim.keymap.set('n', '<leader>b', notify 'bookmarks.list', { silent = true })
 
   -- LSP
-  vim.keymap.set('n', '<leader>g', notify 'editor.action.revealDefinition', { silent = true })
   vim.keymap.set('n', '<leader>gd', notify 'editor.action.revealDefinition', { silent = true })
+  -- Match IDEA binding; <leader>gd has issues for some reason.
+  vim.keymap.set('n', '<leader>gg', notify 'editor.action.revealDefinition', { silent = true })
   vim.keymap.set('n', '<leader>gr', notify 'editor.action.goToReferences', { silent = true })
   vim.keymap.set('n', '<leader>gi', notify 'editor.action.goToImplementation', { silent = true })
   vim.keymap.set("n", "<leader>ca", notify 'editor.action.sourceAction', { silent = true })

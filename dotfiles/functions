@@ -2,16 +2,19 @@
 # vim: filetype=sh
 # DESCRIPTION: user defined functions called by .bashrc or .bash_profile
 
-# Opens URL parameters in Chrome tabs
-function google()
-{
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" "$@" &
-}
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Opens URL parameters in Chrome tabs
+  function google()
+  {
+      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" "$@" &
+  }
 
-# Moves file/dir to OSX trash directory
-function trash() {
-    mv $1 ~/.Trash
-}
+  # Moves file/dir to OSX trash directory
+  function trash() {
+      mv $1 ~/.Trash
+  }
+  
+fi
 
 # -- UNDER DEVELOPMENT --
 # find files grep (ffg) - supply ripgrep query and filter subsequent previewed files with fzf and bat
@@ -30,7 +33,9 @@ function _ffg() {
         --preview-window '~4'
     )
     if [[ -n $match ]]; then
-        function cut_nfield { echo $1 | cut -d: -f$2 }
+        function cut_nfield {
+           echo $1 | cut -d: -f$2 
+        }
         file_selected=$(cut_nfield $match 1)
         line=$(cut_nfield $match 2)
 
@@ -47,7 +52,9 @@ function ffg() {
   if [[ $# -gt 0 ]]; then
     match=$(rg --line-number --color=always --hidden "$@" | fzf --ansi)
     if [[ -n $match ]]; then
-        function cut_nfield { echo $1 | cut -d: -f$2 }
+        function cut_nfield {
+          echo $1 | cut -d: -f$2 
+        }
         file_selected=$(cut_nfield $match 1)
         line=$(cut_nfield $match 2)
 

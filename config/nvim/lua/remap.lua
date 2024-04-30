@@ -5,10 +5,8 @@ vim.keymap.set('n', '<leader>hs', ':sp<CR>', {noremap = true})
 -- Clear highlighting
 vim.keymap.set('n', '<leader>ch', ':noh<CR>', {noremap = true})
 
-<<<<<<< HEAD
 -- ??
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-=======
 -- Tab
 vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', {noremap = true})
@@ -49,4 +47,3 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- chmod +x current buffer file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
->>>>>>> 5a45936 (nvim updates)

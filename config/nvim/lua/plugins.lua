@@ -40,8 +40,7 @@ return require('packer').startup(function(use)
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
   }
 
   -- harpoon
@@ -79,6 +78,7 @@ return require('packer').startup(function(use)
   use('ray-x/guihua.lua') -- recommended if need floating window support
 
   -- neotest
+  use { "nvim-neotest/nvim-nio" }
   use {
     "nvim-neotest/neotest",
     requires = {

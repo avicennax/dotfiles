@@ -46,12 +46,17 @@ rebase = false
 # templatedir = ~/.git_template
 defaultBranch = main
 
+# Riot
 [includeIf "gitdir:~/src/riot/"]
+path = .gitconfig-work
+
+[includeIf "gitdir:/mnt/t/"]
 path = .gitconfig-work
 
 [includeIf "gitdir:~/go/"]
 path = .gitconfig-work
 
+# Personal 
 [includeIf "gitdir:~/src/personal/"]
 path = .gitconfig-personal
 

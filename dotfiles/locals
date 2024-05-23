@@ -28,19 +28,3 @@ alias vim="nvim"
 alias scipy="ipython --profile=scipy"
 alias letssketch="cd $pjs/sketchpad"
 alias condaenvs="conda info --envs"
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # git
-    alias yb="git branch | fzf | awk -v ORS= '{\$1=\$1};1' | pbcopy"
-    alias gd="git log | yank"
-    
-    ## web-search aliases
-    alias so="s -p stackoverflow"
-    alias explainshell="s -p explainshell"
-    alias github="s -p github"
-    alias gdocs="s -p googledocs"
-
-    # finder
-    alias findershow='defaults write com.apple.finder ShowAllFiles TRUE'
-    alias finderhide='defaults write com.apple.finder ShowAllFiles FALSE'
-fi

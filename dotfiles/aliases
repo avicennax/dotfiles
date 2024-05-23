@@ -2,36 +2,47 @@
 # vim: filetype=sh
 # DESCRIPTION: user defined aliases; machine specific.
 
-## generic shell aliases
+# mkdir
+alias mkdir='mkdir -p'
+
+# ls
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias ls='ls -F --color=auto'
+    # tree on darwin should be `brew install tree`
+    if command -v exa &> /dev/null; then
+        alias tree='exa -T' 
+    fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias ls='ls -FG'
 fi
 
-alias mkdir='mkdir -p'
 alias ll="ls -lv"
 alias la="ll -a"
 alias lm="ll | less"
+
+# reload
 alias reload="source $bp"
 alias reloadz="source $zshrc"
-alias home="cd ${HOME}"
-alias qf="find . -name "
 
-## grep aliases
+# movement
+alias home="cd ${HOME}"
+
+# grep
 alias grep="grep --color=auto"
 alias gr="grep . -rnE -e "
 
-## history aliases
+## history
 alias h="history"
 alias hgr="history | grep "
 alias ht="history | tail -n "
 
-## tmux aliases
-alias tls="tmux ls"
-alias tas="tmux attach -t "
-alias tss="tmux switch -t "
-alias tks="tmux kill-session -t "
+## tmux
+if command -v tmux &> /dev/null; then
+    alias tls="tmux ls"
+    alias tas="tmux attach -t "
+    alias tss="tmux switch -t "
+    alias tks="tmux kill-session -t "
+fi
 
 # go up black magic
 while [ ${cur_dep=0} -lt ${rec_dep=9} ]
@@ -42,6 +53,21 @@ do
     ((cur_dep++))
 done
 
-## user aliases
+## find
 alias rmpyc='find . -name "*.pyc" -type f -delete'
+alias qf="find . -name "
+
+## git
 alias gc="git current"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias yb="git branch | fzf | awk -v ORS= '{\$1=\$1};1' | pbcopy"
+    alias gd="git log | yank"
+fi
+
+## macOS
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # finder
+    alias findershow='defaults write com.apple.finder ShowAllFiles TRUE'
+    alias finderhide='defaults write com.apple.finder ShowAllFiles FALSE'
+fi

@@ -65,9 +65,9 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
 else
-    [ -f /etc/bash_completion ] && ! shopt -oq posix && . /etc/bash_completion
+    [ -f ~/.completion.bash ] && source ~/.completion.bash
+    [ -f ~/.key-bindings.bash ] && source ~/.key-bindings.bash
 fi
-
 
 ## ANACONDA SETUP
 #----------------

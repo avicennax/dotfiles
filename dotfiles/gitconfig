@@ -50,7 +50,7 @@ defaultBranch = main
 [includeIf "gitdir:~/src/riot/"]
 path = .gitconfig-work
 
-[includeIf "gitdir:/mnt/t/"]
+[includeIf "gitdir:/mnt/t/git"]
 path = .gitconfig-work
 
 [includeIf "gitdir:~/go/"]

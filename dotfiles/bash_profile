@@ -9,7 +9,9 @@ export STARSHIP_CONFIG=~/.starship
 
 # Use zoxide
 # https://github.com/ajeetdsouza/zoxide
-eval "$(zoxide init bash)"
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init bash)"
+fi
 
 # Set color prompt
 export TERM="xterm-256color"
@@ -67,6 +69,19 @@ if [ -f ~/.fzf.bash ]; then
 else
     [ -f ~/.completion.bash ] && source ~/.completion.bash
     [ -f ~/.key-bindings.bash ] && source ~/.key-bindings.bash
+fi
+
+# Combine z & fzf
+# https://github.com/junegunn/fzf/wiki/examples#z
+if [ -f ~/.z.sh ]; then
+  # (TODO) move to using zoxide (requires fzf >= 33.0)
+  source ~/.z.sh
+  # Don't use zoxide / z
+  unalias z 2> /dev/null
+  z() {
+    [ $# -gt 0 ] && _z "$*" && return
+    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+  }
 fi
 
 ## ANACONDA SETUP

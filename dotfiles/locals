@@ -28,3 +28,6 @@ alias vim="nvim"
 alias scipy="ipython --profile=scipy"
 alias letssketch="cd $pjs/sketchpad"
 alias condaenvs="conda info --envs"
+
+## WSL
+alias perf='sudo /usr/lib/linux-tools-5.15.0-107/perf'

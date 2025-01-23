@@ -2,20 +2,6 @@
 # vim: filetype=sh
 # DESCRIPTION: user defined functions called by .bashrc or .bash_profile
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  # Opens URL parameters in Chrome tabs
-  function google()
-  {
-      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" "$@" &
-  }
-
-  # Moves file/dir to OSX trash directory
-  function trash() {
-      mv $1 ~/.Trash
-  }
-  
-fi
-
 # -- UNDER DEVELOPMENT --
 # find files grep (ffg) - supply ripgrep query and filter subsequent previewed files with fzf and bat
 # open selection (if made) with nvim.

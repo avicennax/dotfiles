@@ -20,7 +20,6 @@ ba = branch -a
 remotes = remote -v
 rh = reset --hard
 purge = "!sh -c 'git reset --hard; git clean -df'"
-ctags = "!sh -c .git/hooks/ctags"
 cp = cherry-pick
 dbr = "!sh -c 'git branch | grep sjh | xargs -I{} git del {}'"
 
@@ -43,7 +42,6 @@ default = current
 rebase = false
 
 [init]
-# templatedir = ~/.git_template
 defaultBranch = main
 
 # Riot

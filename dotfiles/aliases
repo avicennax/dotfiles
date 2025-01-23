@@ -18,7 +18,6 @@ fi
 
 alias ll="ls -lv"
 alias la="ll -a"
-alias lm="ll | less"
 
 # reload
 alias reload="source $bp"

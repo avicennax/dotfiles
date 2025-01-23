@@ -68,5 +68,4 @@ augroup env
 augroup END
 
 "" -- Filetype Headers --
-autocmd BufNewfile *.py so $HOME/.vim/headers/python.vim
 autocmd BufNewfile *.sh so $HOME/.vim/headers/bash.vim

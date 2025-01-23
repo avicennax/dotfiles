@@ -14,7 +14,6 @@ brew "btop"
 brew "openssl"
 brew "readline"
 brew "the_silver_searcher" # ag
-brew "ripgrep" # rg
 brew "s-search"
 brew "procs" # ps
 brew "tree"

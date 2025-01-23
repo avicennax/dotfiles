@@ -31,3 +31,16 @@ alias condaenvs="conda info --envs"
 
 ## WSL
 alias perf='sudo /usr/lib/linux-tools-5.15.0-107/perf'
+
+## PYENV
+#-------
+# Load pyenv automatically by appending
+# the following to
+# ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+# and ~/.bashrc (for interactive shells) :
+
+pyinit() {
+  export PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)" 
+}
